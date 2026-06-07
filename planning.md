@@ -54,11 +54,12 @@ neither piece useful on its own. Chunks over 800 tokens start bundling unrelated
 topics together, which makes it harder to retrieve the right section for a given 
 query.
 
-500 tokens is the middle ground. It's a judgment call 
-based on how these documents are structured, and it may need adjusting after 
+500 tokens is the middle ground. It's a judgment call based on how these documents are structured, and it may need adjusting after 
 testing. The 75-token overlap is there for boundary cases: when a key fact like 
 a deadline or a dollar figure lands right at the edge of a chunk, it shows up in 
 both adjacent chunks instead of getting cut off in one.
+
+In implementation, 500 tokens was approximated as 2000 characters (using a 4 characters-per-token ratio), with overlap set to 300 characters (~75 tokens), as LangChain's RecursiveCharacterTextSplitter operates on characters rather than tokens directly.
 
 Splitting method: LangChain's RecursiveCharacterTextSplitter, breaking on 
 paragraph breaks first, then sentences. It follows the document's natural 
@@ -108,8 +109,8 @@ upgrade them without redeploying the whole pipeline.
 | 1 | What is the full-time graduate tuition for the 2025-2026 academic year? | $66,670 |
 | 2 | How does a student begin the process of requesting disability accommodations at JHU? | Complete the online SDS Application and provide documentation meeting SDS Guidelines for Documentation |
 | 3 | What is the non-refundable fee charged when registering for courses at the School of Education? | $175 |
-| 4 | What is the Dissertation Prize Fellowship and who is eligible for it? | A fellowship for final-year students to focus on dissertation completion, awarded each semester; students who received it in spring 2025 are ineligible |
-| 5 | What health insurance coverage is included as part of a KSAS graduate fellowship? | Health insurance for the award semester |
+| 4 | What is the Dissertation Prize Fellowship and who is eligible for it? | A fellowship for final-year KSAS students to focus on dissertation writing without teaching obligations for a semester; students beyond their sixth year in spring 2025 are ineligible |
+| 5 | What happens to a School of Education student who fails to enroll each semester and does not receive an approved leave of absence? | They are made inactive and dropped from the rolls in the second week after the start of the semester, and must reapply for admission |
 
 ---
 
@@ -119,9 +120,9 @@ upgrade them without redeploying the whole pipeline.
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
+1. Key facts split across chunk boundaries. Policy documents often introduce a rule in one paragraph and state the exception or threshold in the next. If those land in separate chunks with no overlap, retrieval may return only half the answer. The 75-token overlap mitigates this but won't eliminate it entirely -- this is the most likely source of partially accurate responses during evaluation.
 
-2.
+2. Stale or inconsistent information across documents. Several documents cover overlapping topics from different time periods -- the GRO bylaws are from 2020, and the two calendars span different academic years. If a user asks about a deadline or policy that appears in multiple documents with conflicting details, the retrieval system may return both chunks and the LLM may pick the wrong one. This will be documented as a known limitation.
 
 ---
 
@@ -132,6 +133,51 @@ upgrade them without redeploying the whole pipeline.
      Label each stage with the tool or library you're using.
      You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
      You'll use this diagram as context when prompting AI tools to implement each stage. -->
+
+     Raw PDFs / Web Pages
+        |
+        v
++-------------------------+
+|   Document Ingestion    |
+|  pdfplumber (PDFs)      |
+|  requests + bs4 (web)   |
++-------------------------+
+        |
+        v
++-------------------------+
+|        Chunking         |
+|  RecursiveCharacter     |
+|  TextSplitter           |
+|  500 tokens / 75 overlap|
++-------------------------+
+        |
+        v
++-------------------------+
+|  Embedding + Vector DB  |
+|  all-MiniLM-L6-v2       |
+|  ChromaDB (local)       |
++-------------------------+
+        |
+        v
++-------------------------+
+|       Retrieval         |
+|  Semantic similarity    |
+|  top-k = 5              |
++-------------------------+
+        |
+        v
++-------------------------+
+|       Generation        |
+|  Groq API               |
+|  llama-3.3-70b-versatile|
+|  grounded + cited       |
++-------------------------+
+        |
+        v
++-------------------------+
+|     Query Interface     |
+|  CLI or simple web UI   |
++-------------------------+
 
 ---
 
@@ -148,7 +194,11 @@ upgrade them without redeploying the whole pipeline.
      with my specified chunk size and overlap" is a plan. -->
 
 **Milestone 3 — Ingestion and chunking:**
+I'll use Claude. I'll give it the Documents table and Architecture diagram from this file and ask it to implement `ingest.py` -- a script that loops over each source, downloads or fetches the content, extracts text using pdfplumber for PDFs and requests + BeautifulSoup for web pages, and saves structured output. I'll then give it the Chunking Strategy section and ask it to implement `chunk.py` using LangChain's RecursiveCharacterTextSplitter with 500-token chunks and 75-token overlap. I'll verify by inspecting sample chunks manually to confirm they're coherent and not cutting mid-sentence.
 
 **Milestone 4 — Embedding and retrieval:**
+I'll use Claude. I'll give it the Retrieval Approach section and ask it to implement `embed.py` -- a script that takes the chunked output, embeds each chunk using all-MiniLM-L6-v2 via sentence-transformers, and loads them into a local ChromaDB collection with source metadata attached. I'll verify by running a test query directly against ChromaDB and confirming the top-5 returned chunks are topically relevant.
 
 **Milestone 5 — Generation and interface:**
+I'll use Claude. I'll give it the full Architecture diagram plus the Evaluation Plan and ask it to implement `query.py` -- a script that takes a user question, retrieves top-5 chunks from ChromaDB, passes them to the Groq API with a system prompt that enforces grounding and requires source citations, and returns the answer. I'll also ask it to implement `evaluate.py` that runs all 5 test questions and outputs a structured report. I'll verify by running the evaluation questions and checking responses against the expected answers in this file.
+
