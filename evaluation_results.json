@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "question": "What is the full-time graduate tuition for the 2025-2026 academic year?",
+    "expected": "$66,670",
+    "answer": "The full-time graduate tuition for the 2025-2026 academic year is $66,670.\n\nSources:\n[2] Source: tuition-fees.pdf\n[5] Source: tuition-fees.pdf",
+    "sources": [
+      "PhD-Graduate-Student-Manual-2025-2026.pdf",
+      "tuition-fees.pdf",
+      "tuition-fees.pdf",
+      "tuition-fees.pdf",
+      "tuition-fees.pdf"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "How does a student begin the process of requesting disability accommodations at JHU?",
+    "expected": "Complete the online SDS Application and provide documentation meeting SDS Guidelines for Documentation",
+    "answer": "To begin the process of requesting disability accommodations at JHU, a student should complete the online SDS Application through the university-wide database, Accommodation Information Manager (AIM), and then submit documentation. The student will then attend an Initial Meeting with an SDS Advisor to discuss their needs and potential accommodations and services.\n\nSources:\n[3] Source: Student Disability Services (SDS) _ Johns Hopkins University Academic Catalogue.txt\n[4] Source: Student-Health-and-Well.Being-6.26.24-red.pdf",
+    "sources": [
+      "PhD-Graduate-Student-Manual-2025-2026.pdf",
+      "PhD-Graduate-Student-Manual-2025-2026.pdf",
+      "Student Disability Services (SDS) _ Johns Hopkins University Academic Catalogue.txt",
+      "Student-Health-and-Well.Being-6.26.24-red.pdf",
+      "Student-Health-and-Well.Being-6.26.24-red.pdf"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What is the non-refundable fee charged when registering for courses at the School of Education?",
+    "expected": "$175",
+    "answer": "The non-refundable registration fee charged when registering for courses is $175.\n\nSources:\n[1] Source: Registration & Enrollment - JHU School of Education.txt",
+    "sources": [
+      "Registration & Enrollment - JHU School of Education.txt",
+      "tuition-fees.pdf",
+      "tuition-fees.pdf",
+      "tuition-fees.pdf",
+      "PhD-Graduate-Student-Manual-2025-2026.pdf"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "What is the Dissertation Prize Fellowship and who is eligible for it?",
+    "expected": "A fellowship for final-year KSAS students to focus on dissertation writing without teaching obligations for a semester; students beyond their sixth year in spring 2025 are ineligible",
+    "answer": "The Dissertation Prize Fellowship is a program offered by the Office of the Dean of Arts and Sciences, designed to allow final-year students to focus on dissertation writing without any teaching obligation for a semester. To be eligible, applicants must be graduate students in the Krieger School of Arts and Sciences and complete their dissertation by the end of the award period. Priority is given to students in their sixth year, and students beyond their sixth year in spring 2025 are ineligible.\n\nSources:\n[1] Source: Graduate Fellowships – Krieger School of Arts & Sciences.txt\n[2] Source: Graduate Fellowships – Krieger School of Arts & Sciences.txt",
+    "sources": [
+      "Graduate Fellowships – Krieger School of Arts & Sciences.txt",
+      "Graduate Fellowships – Krieger School of Arts & Sciences.txt",
+      "PhD-Funding-and-Wage-Types_030425.pdf",
+      "PhD-Graduate-Student-Manual-2025-2026.pdf",
+      "PhD-Funding-and-Wage-Types_030425.pdf"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "What happens to a School of Education student who fails to enroll each semester and does not receive an approved leave of absence?",
+    "expected": "They are made inactive and dropped from the rolls in the second week after the start of the semester, and must reapply for admission",
+    "answer": "A School of Education student who fails to enroll each semester and does not receive an approved leave of absence will be made inactive and dropped from the rolls due to enrollment inactivity in the second week after the start of the semester. The student will need to reapply for admission.\n\nSources:\n[2] Source: Registration & Enrollment - JHU School of Education.txt",
+    "sources": [
+      "PhD-Graduate-Student-Manual-2025-2026.pdf",
+      "Registration & Enrollment - JHU School of Education.txt",
+      "Student Conduct Code _ Policies & Guidelines _ Johns Hopkins University.txt",
+      "Student Conduct Code _ Policies & Guidelines _ Johns Hopkins University.txt",
+      "Student Conduct Code _ Policies & Guidelines _ Johns Hopkins University.txt"
+    ]
+  }
+]

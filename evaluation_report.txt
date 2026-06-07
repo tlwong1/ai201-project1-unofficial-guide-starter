@@ -1,0 +1,227 @@
+======================================================================
+EVALUATION REPORT: JHU Unofficial Guide RAG System
+======================================================================
+
+======================================================================
+Q1: What is the full-time graduate tuition for the 2025-2026 academic year?
+
+Expected answer:
+  $66,670
+
+System response:
+The full-time graduate tuition for the 2025-2026 academic year is $66,670.
+
+Sources:
+[2] Source: tuition-fees.pdf
+[5] Source: tuition-fees.pdf
+
+Chunks retrieved:
+  [1] PhD-Graduate-Student-Manual-2025-2026.pdf
+       and Planetary Sciences, and more! Visit these pages for available degree programs:
+• Whiting School of Engineering master’s degrees
+• Engineering for ...
+  [2] tuition-fees.pdf
+       Housing (Sophomore)
+credit hour)
+Living Expenses, Off-Campus Food $3,619
+Full-time $1,140
+Living Expenses, Off-Campus $11,762
+Graduate
+Housing
+Educati...
+  [3] tuition-fees.pdf
+       Services here (
+in Strategy,
+admissions-services/tuition-and-fees/).
+Cybersecurity
+and Intelligence Tuition
+Full-time MA $64,355
+Program Tuition Per C...
+  [4] tuition-fees.pdf
+       nursing.jhu.edu/admissions/tuition/). Master of
+Science
+Tuition
+Graduate $1,387
+Program Tuition Per Credit Hour Per Course Certificate (per
+Full-time ...
+  [5] tuition-fees.pdf
+       Tuition, Fees, and Cost of Attendance 1
+TUITION, FEES, AND COST OF Federal Loan Fees (Sub/Unsub $58
+Loans)
+ATTENDANCE Federal Loan Fees (Parent PLUS) ...
+
+Accuracy (fill in manually): [X] Accurate  [ ] Partially accurate  [ ] Inaccurate
+Notes: exact dollar figure, correct source cited.
+
+======================================================================
+Q2: How does a student begin the process of requesting disability accommodations at JHU?
+
+Expected answer:
+  Complete the online SDS Application and provide documentation meeting SDS Guidelines for Documentation
+
+System response:
+To begin the process of requesting disability accommodations at JHU, a student should complete the online SDS Application through the university-wide database, Accommodation Information Manager (AIM), and then submit documentation. The student will then attend an Initial Meeting with an SDS Advisor to discuss their needs and potential accommodations and services.
+
+Sources:
+[3] Source: Student Disability Services (SDS) _ Johns Hopkins University Academic Catalogue.txt
+[4] Source: Student-Health-and-Well.Being-6.26.24-red.pdf
+
+Chunks retrieved:
+  [1] PhD-Graduate-Student-Manual-2025-2026.pdf
+       academic advisor, course instructor, or teaching assistant.
+• For other concerns mentioned above, you can contact these people for help:
+Allison Leven...
+  [2] PhD-Graduate-Student-Manual-2025-2026.pdf
+       of specialization and six advanced (xxx.400-xxx.799) courses in related fields. The student’s faculty advisor will
+provide guidance on which courses t...
+  [3] Student Disability Services (SDS) _ Johns Hopkins University Academic Catalogue.txt
+       To begin the process of requesting accommodations, students should
+complete the online SDS Application
+and provide documentation that meets the
+SDS Gu...
+  [4] Student-Health-and-Well.Being-6.26.24-red.pdf
+       coverage out of medical coverage.
+•Visiting students will be required to self-enroll into coverage
+based on the dates provided on their appointment le...
+  [5] Student-Health-and-Well.Being-6.26.24-red.pdf
+       Hop on Board:
+Student Health and Well-Being
+Welcome!
+We will begin the webinar in a few minutes
+• A recording of this webinar and slides will be avail...
+
+Accuracy (fill in manually): [ ] Accurate  [X] Partially accurate  [ ] Inaccurate
+Notes: the core answer is right (complete SDS Application, provide documentation) but the system added 
+extra details about AIM and an Initial Meeting that aren't in your expected answer. The info may be 
+correct but it came from the Health PDF, not the SDS policy doc. Worth noting as a retrieval bleed issue.
+
+======================================================================
+Q3: What is the non-refundable fee charged when registering for courses at the School of Education?
+
+Expected answer:
+  $175
+
+System response:
+The non-refundable registration fee charged when registering for courses is $175.
+
+Sources:
+[1] Source: Registration & Enrollment - JHU School of Education.txt
+
+Chunks retrieved:
+  [1] Registration & Enrollment - JHU School of Education.txt
+       instructors to request permission to register for or attend a closed
+course. Students who fail to complete their registration and sit in on a
+class wi...
+  [2] tuition-fees.pdf
+       Tuition, Fees, and Cost of Attendance 1
+TUITION, FEES, AND COST OF Federal Loan Fees (Sub/Unsub $58
+Loans)
+ATTENDANCE Federal Loan Fees (Parent PLUS) ...
+  [3] tuition-fees.pdf
+       Services here (
+in Strategy,
+admissions-services/tuition-and-fees/).
+Cybersecurity
+and Intelligence Tuition
+Full-time MA $64,355
+Program Tuition Per C...
+  [4] tuition-fees.pdf
+       Item Cost Item Cost
+Matriculation Fee $600 Matriculation Fee $500
+Living Expenses, On-Campus Food $8,552 Living Expenses, Food $8,305
+Living Expenses,...
+  [5] PhD-Graduate-Student-Manual-2025-2026.pdf
+       and Planetary Sciences, and more! Visit these pages for available degree programs:
+• Whiting School of Engineering master’s degrees
+• Engineering for ...
+
+Accuracy (fill in manually): [X] Accurate  [ ] Partially accurate  [ ] Inaccurate
+Notes: exact dollar figure, correct source cited.
+
+======================================================================
+Q4: What is the Dissertation Prize Fellowship and who is eligible for it?
+
+Expected answer:
+  A fellowship for final-year KSAS students to focus on dissertation writing without teaching obligations for a semester; students beyond their sixth year in spring 2025 are ineligible
+
+System response:
+The Dissertation Prize Fellowship is a program offered by the Office of the Dean of Arts and Sciences, designed to allow final-year students to focus on dissertation writing without any teaching obligation for a semester. To be eligible, applicants must be graduate students in the Krieger School of Arts and Sciences and complete their dissertation by the end of the award period. Priority is given to students in their sixth year, and students beyond their sixth year in spring 2025 are ineligible.
+
+Sources:
+[1] Source: Graduate Fellowships – Krieger School of Arts & Sciences.txt
+[2] Source: Graduate Fellowships – Krieger School of Arts & Sciences.txt
+
+Chunks retrieved:
+  [1] Graduate Fellowships – Krieger School of Arts & Sciences.txt
+       Director of Graduate Studies. After reviewing the applications, each
+department should nominate up to three students for the fellowship and
+should sub...
+  [2] Graduate Fellowships – Krieger School of Arts & Sciences.txt
+       cost of required texts, etc. A draft syllabus is encouraged.
+4. Budget proposal for excursions or labs, if applicable. Please
+include funding source.
+...
+  [3] PhD-Funding-and-Wage-Types_030425.pdf
+       PhDs funded by NRSA training grants (T-32, F31) should be classified as a
+fellowship.
+As a reference, the decision tree that follows here provides add...
+  [4] PhD-Graduate-Student-Manual-2025-2026.pdf
+       Report
+• Whiting School of Engineering Policy on Health Insurance > select Health Insurance
+10 Financial Aid
+The Department of Materials Science & Eng...
+  [5] PhD-Funding-and-Wage-Types_030425.pdf
+       PhD Student Workers
+Guaranteed Funding and Wage Types
+Guaranteed Funding Payments made to PhDs
+The Collective Bargaining Agreement (CBA) ratified in A...
+
+Accuracy (fill in manually): [X] Accurate  [ ] Partially accurate  [ ] Inaccurate
+Notes: matches expected answer completely, correct source cited.
+
+======================================================================
+Q5: What happens to a School of Education student who fails to enroll each semester and does not receive an approved leave of absence?
+
+Expected answer:
+  They are made inactive and dropped from the rolls in the second week after the start of the semester, and must reapply for admission
+
+System response:
+A School of Education student who fails to enroll each semester and does not receive an approved leave of absence will be made inactive and dropped from the rolls due to enrollment inactivity in the second week after the start of the semester. The student will need to reapply for admission.
+
+Sources:
+[2] Source: Registration & Enrollment - JHU School of Education.txt
+
+Chunks retrieved:
+  [1] PhD-Graduate-Student-Manual-2025-2026.pdf
+       To maintain non-resident status, students will have to register for non-resident status each semester and
+provide a letter explaining their progress t...
+  [2] Registration & Enrollment - JHU School of Education.txt
+       *
+Auditing a Course
+*
+Changing Programs
+*
+Continuous Enrollment Policy (CEP) Frequently Asked Questions
+*
+Dropping or Withdrawing from a Course
+*
+Inco...
+  [3] Student Conduct Code _ Policies & Guidelines _ Johns Hopkins University.txt
+       *Suspension*
+Student is notified that the student is separated from the University
+for a specified period of time. The student must leave campus and v...
+  [4] Student Conduct Code _ Policies & Guidelines _ Johns Hopkins University.txt
+       when studying abroad, on an exchange program, on vacation or break, on a
+leave of absence, on a suspension or ban from campus, or when using
+Universit...
+  [5] Student Conduct Code _ Policies & Guidelines _ Johns Hopkins University.txt
+       *Restitution
+*Student is required to make restitution for misuse, damage or
+destruction of or to University, public or private property or services.
+E...
+
+Accuracy (fill in manually): [X] Accurate  [ ] Partially accurate  [ ] Inaccurate
+Notes: matches expected answer almost word for word, correct source cited.
+
+======================================================================
+END OF REPORT
